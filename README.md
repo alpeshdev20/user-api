@@ -20,19 +20,19 @@ Endpoint: /api/register
 Method: POST
 Payload: 
 {
-	"name":"alpesh",
-	"email": "alpesh.dev20@gmail.com",
-	"password": "alpesh@123",
-	"password_confirmation": "alpesh@123",
-	"middlename": "Ramanlal",
-	"surname": "vaghela",
-	"address_line1": "C-308 Panchshlok residency",
-	"address_line2": "Near kB royal",
+	"name":"Spiderman",
+	"email": "spiderman@gmail.com",
+	"password": "spider@123",
+	"password_confirmation": "spider@123",
+	"middlename": "Peter",
+	"surname": "Parker",
+	"address_line1": "15th Street, Queens",
+	"address_line2": "Near New york",
 	"country": "India",
 	"state": "Gujarat",
 	"city": "Ahmedabad",
 	"zipcode": "382424",
-	"phone": "895656323",
+	"phone": "99999999",
 	"birth_date": "0101/2001",
 	"gender": "Male",
 	"hobby": "Cricket, Badminton"
@@ -45,8 +45,8 @@ Endpoint: /api/login
 Method: POST
 Payload: 
 {
-    "email": "alpesh@gmail.com", 
-    "password": "alpesh@123"
+    "email": "spider@gmail.com", 
+    "password": "spider@123"
 }
 
 # Protected
@@ -63,19 +63,17 @@ Endpoint: /api/users
 Method: POST
 Payload: 
 {
-	"name":"alpesh",
-	"email": "alpesh.dev20@gmail.com",
-	"password": "password123",
-	"password_confirmation": "password123",
-	"middlename": "Ramanlal",
-	"surname": "vaghela",
-	"address_line1": "C-308 Panchshlok residency",
-	"address_line2": "Near kB royal",
+	"name":"Spiderman",
+	"email": "spiderman@gmail.com",
+	"middlename": "Peter",
+	"surname": "Parker",
+	"address_line1": "15th Street, Queens",
+	"address_line2": "Near New york",
 	"country": "India",
 	"state": "Gujarat",
 	"city": "Ahmedabad",
 	"zipcode": "382424",
-	"phone": "895656323",
+	"phone": "99999999",
 	"birth_date": "0101/2001",
 	"gender": "Male",
 	"hobby": "Cricket, Badminton"
@@ -85,17 +83,17 @@ Endpoint: /api/users/:id
 Method: PUT
 Payload: 
 {
-	"name":"alpesh",
-	"email": "alpesh.dev20@gmail.com",
-	"middlename": "Ramanlal",
-	"surname": "vaghela",
-	"address_line1": "C-308 Panchshlok residency",
-	"address_line2": "Near kB royal",
+	"name":"Spiderman",
+	"email": "spiderman@gmail.com",
+	"middlename": "Peter",
+	"surname": "Parker",
+	"address_line1": "15th Street, Queens",
+	"address_line2": "Near New york",
 	"country": "India",
 	"state": "Gujarat",
 	"city": "Ahmedabad",
 	"zipcode": "382424",
-	"phone": "895656323",
+	"phone": "99999999",
 	"birth_date": "0101/2001",
 	"gender": "Male",
 	"hobby": "Cricket, Badminton"
@@ -111,9 +109,9 @@ Endpoint: /api/change-password
 Method: PUT
 Payload: 
 {
-    "current_password": "alpesh@123",
-    "password": "demo@123",
-    "password_confirmation": "demo@123"
+    "current_password": "spider@123",
+    "password": "spider@123",
+    "password_confirmation": "bat@123"
 }
 
 
@@ -129,17 +127,19 @@ Endpoint: /api/change-profile
 Method: PUT
 Payload: 
 {
-	"name":"alpesh",
-	"email": "alpesh.dev20@gmail.com",
-	"middlename": "Ramanlal",
-	"surname": "vaghela",
-	"address_line1": "C-308 Panchshlok residency",
-	"address_line2": "Near kB royal",
+	"name":"Spiderman",
+	"email": "spiderman@gmail.com",
+	"password": "spider@123",
+	"password_confirmation": "spider@123",
+	"middlename": "Peter",
+	"surname": "Parker",
+	"address_line1": "15th Street, Queens",
+	"address_line2": "Near New york",
 	"country": "India",
 	"state": "Gujarat",
 	"city": "Ahmedabad",
 	"zipcode": "382424",
-	"phone": "895656323",
+	"phone": "99999999",
 	"birth_date": "0101/2001",
 	"gender": "Male",
 	"hobby": "Cricket, Badminton"
