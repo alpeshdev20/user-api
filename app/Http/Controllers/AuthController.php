@@ -13,13 +13,37 @@ class AuthController extends Controller
         $fields = $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string|confirmed',
+            'middlename' => 'required|string',
+            'surname' => 'required|string',
+            'address_line1' => 'required|string',
+            'address_line2' => 'required|string',
+            'country' => 'required|string',
+            'state' => 'required|string',
+            'city' => 'required|string',
+            'zipcode' => 'required|string',
+            'phone' => 'required|string',
+            'birth_date' => 'required|string',
+            'gender' => 'required|string',
+            'hobby' => 'required|string',
         ]);
 
         $user = User::create([
             'name' => $fields['name'],
             'email' => $fields['email'],
-            'password' => bcrypt($fields['password'])
+            'password' => bcrypt($fields['password']),
+            'middlename' => $fields['middlename'],
+            'surname' => $fields['surname'],
+            'address_line1' => $fields['address_line1'],
+            'address_line2' => $fields['address_line2'],
+            'country' => $fields['country'],
+            'state' => $fields['state'],
+            'city' => $fields['city'],
+            'zipcode' => $fields['zipcode'],
+            'phone' => $fields['phone'],
+            'birth_date' => $fields['birth_date'],
+            'gender' => $fields['gender'],
+            'hobby' => $fields['hobby'],
         ]);
 
         $token = $user->createToken('myapptoken')->plainTextToken;

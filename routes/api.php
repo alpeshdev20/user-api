@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,26 +17,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::resource('products', ProductController::class);
-
 // Public routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/products', [ProductController::class, 'index']);
-Route::get('/products/{id}', [ProductController::class, 'show']);
-Route::get('/products/search/{name}', [ProductController::class, 'search']);
 
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
+
+    //Products
+    Route::get('/products', [ProductController::class, 'index']);
+    Route::get('/products/search/{name}', [ProductController::class, 'search']);
+    Route::get('/products/{id}', [ProductController::class, 'show']);
     Route::post('/products', [ProductController::class, 'store']);
     Route::put('/products/{id}', [ProductController::class, 'update']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);
+
+    //Users
+    Route::get('/users', [UsersController::class, 'index']);
+    Route::get('/users/search/{name}', [UsersController::class, 'search']);
+    Route::get('/users/{id}', [UsersController::class, 'show']);
+    Route::post('/users', [UsersController::class, 'store']);
+    Route::put('/users/{id}', [UsersController::class, 'update']);
+    Route::delete('/users/{id}', [UsersController::class, 'destroy']);
+    
+    //Logout
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/me', function (Request $request) {
     return $request->user();
+});
+
+//coming soon
+Route::middleware('auth:sanctum')->put('/change-profile', function (Request $request) {
+    $user = $request->user();
+    echo "<pre>"; print_r($user); exit;
 });
